@@ -1,0 +1,21 @@
+{
+  "name": "hardhat-project",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.3",
+    "@nomicfoundation/hardhat-toolbox": "^1.0.2",
+    "@nomiclabs/hardhat-etherscan": "^3.1.0",
+    "@nomiclabs/hardhat-web3": "^2.0.0",
+    "@openzeppelin/contracts": "^4.7.2",
+    "cross-env": "^7.0.3",
+    "hardhat": "^2.10.1",
+    "web3": "^1.7.5"
+  },
+  "scripts": {
+    "compile": "cross-env GAS_REPORT=true NODE_NO_WARNINGS=1 hardhat compile",
+    "test": "cross-env GAS_REPORT=true NODE_NO_WARNINGS=1 hardhat test",
+    "node": "cross-env GAS_REPORT=true NODE_NO_WARNINGS=1 hardhat node",
+    "check1820": "cross-env GAS_REPORT=true NODE_NO_WARNINGS=1 hardhat check1820",
+    "deploy": "cross-env GAS_REPORT=true NODE_NO_WARNINGS=1 hardhat run ./scripts/deploy_777.js --network localhost",
+    "deploy:local": "npm run check1820 && npm run deploy"
+  }
+}
