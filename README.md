@@ -4,8 +4,8 @@
 
 npm i 
 
-npx hardhat node
+npm run node             
 
-npm run deploy:local
+npm run deploy         
 
 ### do not forget put your private key on .secret file to init the wallet
