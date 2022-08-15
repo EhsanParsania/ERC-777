@@ -14,7 +14,6 @@ import "@openzeppelin/contracts/token/ERC777/ERC777.sol";
  * Based on https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/examples/SimpleToken.sol
  */
 contract Simple777Token is ERC777 {
-    address public owner ; 
     /**
      * @dev Constructor that gives msg.sender all of existing tokens.
      */
@@ -24,7 +23,6 @@ contract Simple777Token is ERC777 {
             msg.sender,
             block.timestamp
         );
-        owner = payable(msg.sender);
         _mint(msg.sender, 1000000 * 10**18, "", "");
     }
 }
