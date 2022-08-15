@@ -11,11 +11,9 @@
     "web3": "^1.7.5"
   },
   "scripts": {
-    "compile": "cross-env GAS_REPORT=true NODE_NO_WARNINGS=1 hardhat compile",
-    "test": "cross-env GAS_REPORT=true NODE_NO_WARNINGS=1 hardhat test",
-    "node": "cross-env GAS_REPORT=true NODE_NO_WARNINGS=1 hardhat node",
-    "check1820": "cross-env GAS_REPORT=true NODE_NO_WARNINGS=1 hardhat check1820",
-    "deploy": "cross-env GAS_REPORT=true NODE_NO_WARNINGS=1 hardhat run ./scripts/deploy_777.js --network localhost",
-    "deploy:local": "npm run check1820 && npm run deploy"
+    "compile": "cross-env  hardhat compile",
+    "test": "cross-env  hardhat test",
+    "node": "cross-env  hardhat node",
+    "deploy": "cross-env  hardhat run ./scripts/deploy_777.js --network localhost"
   }
 }
