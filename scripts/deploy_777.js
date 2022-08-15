@@ -5,9 +5,10 @@
 // will compile your contracts, add the Hardhat Runtime Environment's members to the
 // global scope, and execute the script.
 const hre = require("hardhat");
-const { expect } = require("chai");
+const { ensureERC1820 } = require("../utils/Hardhat-erc1820");
 
 async function main() {
+  await ensureERC1820(hre.network.provider)
 
   console.log("\nWeb3 client accounts:", await hre.web3.eth.getAccounts())
 
@@ -25,18 +26,6 @@ async function main() {
   await recipient.deployed();
 
   console.log("recipient deployed to:", recipient.address);
-
-
-  const amount = 10
-  const data = JSON.stringify({
-    staking_positions: [
-      { duration: "1y"}
-    ]
-  });
-
-  const receipt = await token.send(recipient.address, amount, [])
-
-  await expect(receipt).to.emit( recipient, 'DoneStuff')
 }
 
 // We recommend this pattern to be able to use async/await everywhere
