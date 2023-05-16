@@ -1,4 +1,4 @@
-# Sample deploying ERC777 with hardhat
+# Sample of deploying ERC777 with hardhat
 
 ## to run the project :
 
