@@ -5,7 +5,6 @@ require("@nomiclabs/hardhat-etherscan");
 const fs = require("fs");
 const secret = fs.readFileSync(".secret", "utf8").trim()
 
-/** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.9",
   defaultNetwork: "hardhat",
@@ -16,12 +15,12 @@ module.exports = {
       allowUnlimitedContractSize: true
     },
     bscTestnet: {
-      url: "https://data-seed-prebsc-1-s1.binance.org:8545",
+      url: process.env.BSC_TESTNET_URL,
       chainId: 97,
       accounts: [secret],
     },
     rinkeby: {
-      url :"https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
+      url : process.env.RINKEBY_URL,
       chainId: 4,
       accounts: [secret],
     },
@@ -29,8 +28,8 @@ module.exports = {
   },
   etherscan: {
     apiKey: {
-      bscTestnet: "{YOUR_API_KEY}", 
-      rinkeby: "{RINKEBY_API_KEY}",
+      bscTestnet: process.env.BSC_TESTNET_API_KEY,
+      rinkeby: process.env.RINKEBY_API_KEY,
     },
   },
 };
