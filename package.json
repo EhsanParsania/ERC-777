@@ -14,6 +14,7 @@
     "compile": "cross-env  hardhat compile",
     "test": "cross-env  hardhat test",
     "node": "cross-env  hardhat node",
-    "deploy": "cross-env  hardhat run ./scripts/deploy_777.js --network localhost"
+    "deploy": "cross-env  hardhat run ./scripts/deploy_777.js --network localhost",
+    "deploy:bsctest": "cross-env  hardhat run ./scripts/deploy_777.js --network bscTestnet"
   }
 }
