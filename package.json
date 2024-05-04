@@ -1,5 +1,9 @@
 {
   "name": "erc-777-with-registration-on-erc-1820",
+  "keywords": [
+    "erc777",
+    "hardhat"
+  ],
   "devDependencies": {
     "@nomicfoundation/hardhat-network-helpers": "^1.0.3",
     "@nomicfoundation/hardhat-toolbox": "^1.0.2",
